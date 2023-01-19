@@ -2,6 +2,7 @@
   "manifest_version": 2,
   "name": "Publish on Nostr",
   "version": "1.0",
+  "options_page": "settings.html",
   "background": {
     "scripts": ["background.js"]
   },
