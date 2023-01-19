@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Publish on Nostr Settings</title>
+</head>
+<body>
+    <h1>Publish on Nostr Settings</h1>
+    <form>
+        <label for="nostr-webclient-url">Nostr Webclient URL:</label>
+        <input type="text" id="nostr-webclient-url" name="nostr-webclient-url">
+        <br>
+        <button id="save-settings-button" type="submit">Save Settings</button>
+        <button id="reset-settings-button" type="reset">Reset Settings</button>
+    </form>
+    <p id="feedback"></p>
+    <p id="current-url"></p>
+    <script>
+        // code to handle reset button
+        document.getElementById("reset-settings-button").addEventListener("click", function(){
+            // code to reset settings here
+            chrome.storage.local.clear(function() {
+                var error = chrome.runtime.lastError;
+                if (error) {
+                    console.error(error);
+                }
+            });
+        });
+
+        // code to handle save button
+        document.getElementById("save-settings-button").addEventListener("click", function(){
+            var url = document.getElementById("nostr-webclient-url").value;
+            chrome.storage.local.set({'nostr-webclient-url': url}, function() {
+                console.log('Value is set to ' + url);
+                document.getElementById("feedback").innerHTML = "Settings saved successfully!";
+              });
+        });
+
+        // code to fetch current settings
+        chrome.storage.local.get(['nostr-webclient-url'], function(result) {
+            console.log('Value currently is ' + result['nostr-webclient-url']);
+            document.getElementById("nostr-webclient-url").value = result['nostr-webclient-url'];
+            document.getElementById("current-url").innerHTML = "Current URL: " + result['nostr-webclient-url'];
+          });
+    </script>
+</body>
+</html>
