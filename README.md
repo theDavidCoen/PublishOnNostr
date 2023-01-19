@@ -15,6 +15,8 @@ All in one step, a simple click on the context-menu item.
 - [x] Icons added
 - [x] Open https://snort.social/
 - [x] settings.html created
+- [ ] Rewrite for Manifest 3
+- [ ] Must have scripting and storage permissions
 - [ ] Save custom URL (Nostr webclient) 
 - [ ] Show current URL (Nostr webclient)
 - [ ] Show feedback messages when saving or resetting the settings
