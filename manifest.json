@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Publish on Nostr",
+  "version": "1.0",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": ["contextMenus", "scripting", "activeTab"],
+  "icons": {
+    "16": "icon16.png",
+    "128": "icon128.png"
+  }
+}
