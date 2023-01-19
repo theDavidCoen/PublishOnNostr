@@ -6,7 +6,7 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "permissions": ["contextMenus", "scripting", "activeTab"],
+  "permissions": ["contextMenus", "scripting", "activeTab", "storage"],
   "icons": {
     "16": "icon16.png",
     "128": "icon128.png"
