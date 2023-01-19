@@ -1,3 +1,6 @@
+chrome.storage.local.get('nostr-webclient-url', function (result) {
+var url = result['nostr-webclient-url'] || 'https://snort.social/';
+});
 chrome.contextMenus.create({
   title: "Publish on Nostr",
   contexts: ["image"],
